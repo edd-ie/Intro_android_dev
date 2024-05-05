@@ -1,16 +1,15 @@
 package com.example.tst1;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,15 +36,19 @@ public class MainActivity extends AppCompatActivity {
         EditText pass = findViewById(R.id.passTab);
         EditText mail = findViewById(R.id.emailTab);
 
+        Button btn = findViewById(R.id.button);
+
         String[] data = {name.getText().toString(), pass.getText().toString(), mail.getText().toString()};
 
         if (data[0].isEmpty()||data[1].isEmpty()||data[2].isEmpty()){
             txt.setText("Error!!");
             txt2.setText("Please fill in all the fields");
+            btn.setBackgroundColor(Color.parseColor("#FF0000"));
         }
         else{
             txt.setText("Hello "+data[0]);
             txt2.setText("Mail: "+data[2]);
+            btn.setBackgroundColor(Color.parseColor("#00FF00"));
         }
 
 
